@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,25 +7,24 @@ using UnityEngine.InputSystem;
 
 namespace UntitledDungeonCrawler
 {
-    public class InputHandler : MonoBehaviour
+    public class InputHandler : MonoSingleton<InputHandler>
     {
-        public PlayerInput playerInput;
+        private PlayerInput playerInput;
+        public bool IsAttackButtonPressed;
         void Awake()
         {
             playerInput = new PlayerInput();
             playerInput.Player.Enable();
-            
         }
-        // Start is called before the first frame update
-        void Start()
+        public void Update()
         {
-        
+            IsAttackButtonPressed = playerInput.Player.Attack.IsPressed();
         }
-
-        // Update is called once per frame
-        void Update()
+        public Vector2 GetMovementVector()
         {
-        
+            Vector2 inputVector = playerInput.Player.Movement.ReadValue<Vector2>();
+            inputVector = inputVector.normalized;
+            return inputVector;
         }
     }
 }

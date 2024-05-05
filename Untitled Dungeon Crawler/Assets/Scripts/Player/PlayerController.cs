@@ -4,23 +4,28 @@ using UnityEngine;
 
 namespace UntitledDungeonCrawler
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoSingleton<PlayerController>
     {
         [Header("Player Properties")]
-        public static ControlTypesSO _control;
+        public ControlTypesSO _control;
         private float _force;
-        private float _lastForce;
-        private Rigidbody2D rb;
+        public Rigidbody2D rb;
+        private InputHandler inputHandler;
+        public bool IsCanPlayerMove = true;
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             _force = _control.Force;
-            _lastForce = _control.LastForce;
+            inputHandler = InputHandler.Instance;
         }
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            //USE THE FORCE FOR MOVEMENT!!!
+            if (IsCanPlayerMove)
+            {
+                Vector2 inputVector = inputHandler.GetMovementVector();
+                rb.velocity = inputVector * _force;
+            }
         }
     }
 }

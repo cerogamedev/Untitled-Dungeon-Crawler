@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cc22a20618a2f43ba654faed97b1de, type: 3}
   m_Name: BasicControlls
   m_EditorClassIdentifier: 
-  Force: 0
-  lastForce: 0
+  Force: 10

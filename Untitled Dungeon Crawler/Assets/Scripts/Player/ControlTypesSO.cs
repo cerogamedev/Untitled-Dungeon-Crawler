@@ -8,6 +8,5 @@ namespace UntitledDungeonCrawler
     public class ControlTypesSO : ScriptableObject 
     {
         public float Force;
-        public float LastForce; 
     }
 }
