@@ -10,7 +10,6 @@ namespace UntitledDungeonCrawler
         public override void EnterState(EnemySM enemyControl)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            Debug.Log("ENTER THE FOLLOW STATE");
             enemyControl.aiPath.maxSpeed = enemyControl.FollowSpeed;
         }
 
@@ -20,6 +19,7 @@ namespace UntitledDungeonCrawler
 
         public override void UpdateState(EnemySM enemyControl)
         {
+            enemyControl.aiPath.maxSpeed = enemyControl.FollowSpeed;
             enemyControl.aiPath.destination = player.position;
 
         }

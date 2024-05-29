@@ -550,7 +550,6 @@ GameObject:
   - component: {fileID: 256846867}
   - component: {fileID: 256846866}
   - component: {fileID: 256846865}
-  - component: {fileID: 256846864}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -575,18 +574,6 @@ Transform:
   m_Father: {fileID: 149335249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &256846864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256846862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b63573ae488684bad00c11cc763ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &256846865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -639,6 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthSlider: {fileID: 78254480}
   CurrentHealth: 0
+  IsKillable: 0
 --- !u!114 &256846868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,6 +714,7 @@ MonoBehaviour:
   - {fileID: 1547426573}
   - {fileID: 1340118140}
   - {fileID: 709531841}
+  _enemyType: 0
   enemyType: {fileID: 11400000, guid: 584290b05054c924b84aaf649fd07741, type: 2}
   PatrolSpeed: 10
   maxWaitDuration: 3
@@ -972,7 +961,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -995,7 +984,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!50 &389793831
@@ -2460,7 +2449,6 @@ GameObject:
   - component: {fileID: 1194514116}
   - component: {fileID: 1194514115}
   - component: {fileID: 1194514114}
-  - component: {fileID: 1194514113}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -2485,18 +2473,6 @@ Transform:
   m_Father: {fileID: 784831043}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1194514113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194514111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b63573ae488684bad00c11cc763ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1194514114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2549,6 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthSlider: {fileID: 766845547}
   CurrentHealth: 0
+  IsKillable: 0
 --- !u!114 &1194514117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2636,6 +2613,7 @@ MonoBehaviour:
   - {fileID: 286622278}
   - {fileID: 1121004498}
   - {fileID: 705455173}
+  _enemyType: 0
   enemyType: {fileID: 11400000, guid: 1a568fefb5316c1409a2276338afa330, type: 2}
   PatrolSpeed: 10
   maxWaitDuration: 3
@@ -3063,6 +3041,7 @@ MonoBehaviour:
   CanFill: 1
   WaitingTime: 1
   AttackObject: {fileID: 389793827}
+  ShadowObject: {fileID: 1749736788}
   Attack: 1
 --- !u!1 &1388430355
 GameObject:
@@ -3616,7 +3595,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!50 &1749736791
@@ -3939,7 +3918,6 @@ GameObject:
   - component: {fileID: 2094116525}
   - component: {fileID: 2094116526}
   - component: {fileID: 2094116527}
-  - component: {fileID: 2094116528}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -3964,6 +3942,7 @@ MonoBehaviour:
   - {fileID: 1452392563}
   - {fileID: 1078870698}
   - {fileID: 759159005}
+  _enemyType: 0
   enemyType: {fileID: 11400000, guid: 584290b05054c924b84aaf649fd07741, type: 2}
   PatrolSpeed: 10
   maxWaitDuration: 3
@@ -4127,6 +4106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthSlider: {fileID: 442918604}
   CurrentHealth: 0
+  IsKillable: 0
 --- !u!114 &2094116526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4165,18 +4145,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2094116528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094116519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b63573ae488684bad00c11cc763ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2125324647
 GameObject:
   m_ObjectHideFlags: 0

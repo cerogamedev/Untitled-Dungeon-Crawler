@@ -13,8 +13,6 @@ namespace UntitledDungeonCrawler
         public override void EnterState(EnemySM enemyControl)
         {
             point = GetPoint(enemyControl);
-            enemyControl.aiPath.maxSpeed = enemyControl.PatrolSpeed;
-            
         }
 
         public override void ExitState(EnemySM enemyControl)

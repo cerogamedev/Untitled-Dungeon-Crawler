@@ -16,15 +16,5 @@ namespace UntitledDungeonCrawler
             _enemyHealth.SetHealth(-damageAmount);
             Debug.Log("Damage : " + damageAmount.ToString());
         }
-
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("PlayerAttack"))
-            {
-                TakeDamage(PlayerAttackController.Instance.TakeDamage());
-                
-            }
-        }
-
     }
 }

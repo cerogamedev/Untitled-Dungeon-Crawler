@@ -11,6 +11,7 @@ namespace UntitledDungeonCrawler
         public AIPath aiPath;
         public Transform[] PatrolPoints;
 
+        public EnemyType _enemyType;
         public EnemyTypesSO enemyType;
         public IEnemyState currentState;
         public float PatrolSpeed;
@@ -27,6 +28,7 @@ namespace UntitledDungeonCrawler
 
         void Awake()
         {
+            _enemyType = enemyType.enemyType;
             enemyHealth = GetComponent<EnemyHealth>();
             aiPath = GetComponent<AIPath>();
             PatrolSpeed = enemyType.PatrolSpeed;
