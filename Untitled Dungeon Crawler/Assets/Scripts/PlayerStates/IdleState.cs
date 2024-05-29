@@ -8,12 +8,10 @@ namespace UntitledDungeonCrawler
     {
         public void EnterState(PlayerStateMachine player)
         {
-            Debug.Log("Entering Idle State!!!");
         }
 
         public void ExitState(PlayerStateMachine player)
         {
-            Debug.Log("Exiting Idle State!!!");
         }
 
         public void UpdateState(PlayerStateMachine player)

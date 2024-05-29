@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UntitledDungeonCrawler
 {
-    public class RotateMousePos : MonoBehaviour, IRotate
+    public class RotateMousePos : MonoSingleton<RotateMousePos>, IRotate
     {
         public bool IsRotate = true;
         public float RotationSpeed;

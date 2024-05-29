@@ -12,7 +12,9 @@ namespace UntitledDungeonCrawler
 
         public override void EnterState(EnemySM enemyControl)
         {
-            point = GetPoint(enemyControl.LeftOrder, enemyControl.RightOrder);
+            point = GetPoint(enemyControl);
+            enemyControl.aiPath.maxSpeed = enemyControl.PatrolSpeed;
+            
         }
 
         public override void ExitState(EnemySM enemyControl)
@@ -25,18 +27,18 @@ namespace UntitledDungeonCrawler
 
         public override void UpdateState(EnemySM enemyControl)
         {
-            enemyControl.transform.position = Vector2.MoveTowards(enemyControl.transform.position, point, enemyControl.PatrolSpeed / 100);
+            enemyControl.aiPath.destination = point;
+            enemyControl.aiPath.maxSpeed = enemyControl.PatrolSpeed;
             if (Vector2.Distance(enemyControl.transform.position, point) < 0.3f && !isWaiting)
             {
                 waitCoroutine = enemyControl.StartCoroutine(WaitForDelay(enemyControl));
             }
         }
 
-        public Vector2 GetPoint(Transform leftOrder, Transform rightOrder)
+        public Vector2 GetPoint(EnemySM enemyControl)
         {
-            float left = Random.Range(leftOrder.position.x, rightOrder.position.x);
-            float right = Random.Range(rightOrder.position.y, leftOrder.position.y);
-            Vector2 goPoint = new Vector2(left, right);
+            int randomPoint = Random.Range(0,enemyControl.PatrolPoints.Length);
+            Vector2 goPoint = enemyControl.PatrolPoints[randomPoint].transform.position;
             return goPoint;
         }
 
@@ -45,7 +47,7 @@ namespace UntitledDungeonCrawler
             isWaiting = true;
             float waitingRange = Random.Range(0,enemyControl.maxWaitDuration);
             yield return new WaitForSeconds(waitingRange); 
-            point = GetPoint(enemyControl.LeftOrder, enemyControl.RightOrder);
+            point = GetPoint(enemyControl);
             isWaiting = false; 
         }
     }

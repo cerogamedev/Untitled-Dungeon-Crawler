@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c02f3a246a5ae4c9abd285e57fcdb7, type: 3}
+  m_Name: Zombie 1
+  m_EditorClassIdentifier: 
+  enemyType: 3
+  MaxHealth: 10
+  PatrolSpeed: 8
+  PatrolWaitDurationMax: 2
+  FollowSpeed: 9.18
+  AttackSpeed: 0
+  BeforeAttackDuration: 0
+  GhostCursedItem: {fileID: 0}
+  DemonHealthIncreaseIndex: 0
+  HealthIncreaseIndex: 0
+  RoomNumber: 2

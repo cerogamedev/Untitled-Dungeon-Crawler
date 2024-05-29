@@ -26,7 +26,6 @@ namespace UntitledDungeonCrawler
         public void SetItActive()
         {
             MainCanva.SetActive(true);
-            AttackSlider.value = 0;
             Filler.color = Color.red;
         }
         public void SetItClose()
